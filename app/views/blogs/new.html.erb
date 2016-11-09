@@ -1,0 +1,19 @@
+<div class='row'>
+  <h1>Create A New Blog</h1>
+</div>
+
+<div class='row'>
+  <div class='large-6 columns'>
+    <%= form_for @blog do |f| %>
+      <h3>Blog Title</h3>
+      <%= f.text_field :title %>
+      <h3>Video Url</h3>
+      <%= f.text_field :video %>
+      <h3>Body</h3>
+      <%= f.text_area :body %>
+
+      <%= f.submit class:'button button-primary' %>
+
+    <% end %>  
+  </div>
+</div>
