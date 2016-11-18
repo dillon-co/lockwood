@@ -73,6 +73,8 @@ $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
 
+$topbar-bg-color: rgba(0,0,0,0);
+
 @include add-foundation-colors;
 
 // 2. Breakpoints
@@ -397,7 +399,7 @@ $meter-fill-bad: $alert-color;
 // --------------
 
 $offcanvas-size: 250px;
-$offcanvas-background: $light-gray;
+// $offcanvas-background: $light-gray;
 $offcanvas-zindex: -1;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
@@ -559,7 +561,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: 0.5rem;
-$topbar-background: rgba(0,0,0,0.9);
+$topbar-background: $topbar-bg-color;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: 1rem;
 $topbar-input-width: 200px;

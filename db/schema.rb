@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161108214527) do
+ActiveRecord::Schema.define(version: 20161115231517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,11 +35,24 @@ ActiveRecord::Schema.define(version: 20161108214527) do
   create_table "blogs", force: :cascade do |t|
     t.integer  "admin_id"
     t.string   "video"
-    t.string   "title",      null: false
-    t.text     "body",       null: false
+    t.string   "title",              null: false
+    t.text     "body",               null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "summary"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.index ["admin_id"], name: "index_blogs_on_admin_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.integer  "blog_id"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_blogs_on_admin_id", using: :btree
+    t.index ["blog_id"], name: "index_tags_on_blog_id", using: :btree
   end
 
 end

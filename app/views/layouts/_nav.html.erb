@@ -1,18 +1,15 @@
-<div class="top-bar">
+<nav class="top-bar" data-topbar>
   <div class="top-bar-title">
-    <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-      <button class="menu-icon" type="button" data-toggle></button>
-    </span>
     <h4><strong><%= link_to "Lockwood", root_path %></strong></h4>
   </div>
   <div id="responsive-menu">
     <div class="top-bar-left">
-      <ul class="dropdown menu" data-dropdown-menu>
+      <ul class="dropdown menu" data-responsive-menu>
         <li>
-          <a href="#">Blog</a>
+          <%= link_to "Blog", blogs_path %>
          <!--  <ul class="menu vertical">
             <li><a href="#">One</a></li>
-            <li><a href="#">Two</a></li>
+            <li><a href="#">Two</a></li>  
             <li><a href="#">Three</a></li>
           </ul> -->
         </li>
@@ -23,4 +20,16 @@
     <div class="top-bar-right">
     </div>
   </div>
-</div>
+</nav>
+<script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
+ <script src="js/foundation/foundation.dropdown.js"></script>
+  <!-- Other JS plugins can be included here -->
+
+  <script>
+    $(document).foundation();
+  </script>
+
+     <!--  <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
+        <button class="menu-icon" type="button" data-toggle></button>
+      </span> -->

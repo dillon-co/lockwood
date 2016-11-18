@@ -1,0 +1,35 @@
+<div class='row large-3 columns blog-title'>
+  <h1><strong>Blog</strong></h1>
+</div> 
+<div class="row" id="content">
+  <div class='large-7 columns '>
+    <% @blogs.each do |blog| %>
+      <div class="blog-post">
+        <h3><strong><%= link_to blog.title.titleize, blog_path(blog), class:'blog-title-link'%></strong><small><%= blog.created_at.strftime("%-m/%-d/%y") %></small></h3>
+        <img class="thumbnail" src="http://placehold.it/850x350">
+        <p><%= blog.summary.html_safe %><%= link_to " Read More", blog_path(blog) %></p>
+        <div class='row'>
+          <div class="callout">
+            <ul class="menu">
+            <% blog.tags.all.each do |t| %>
+              <li><%= link_to t.name.titleize, tag_path(t.name) %></li>
+            <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>  
+  <div class="large-5 columns" data-sticky-container>
+    <div class="sticky" data-sticky data-anchor="content">
+      <h4>Categories</h4>
+      <ul>
+        <% @tags.each do |tag| %>
+          <li class='button second'><%= link_to tag.titleize, tag_path(tag) %></li>
+        <% end %>  
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<%= will_paginate @blogs, renderer: FoundationPagination::Rails %>

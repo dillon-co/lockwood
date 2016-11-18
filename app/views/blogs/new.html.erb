@@ -2,18 +2,23 @@
   <h1>Create A New Blog</h1>
 </div>
 
-<div class='row'>
-  <div class='large-6 columns'>
-    <%= form_for @blog do |f| %>
-      <h3>Blog Title</h3>
+<div>
+  <div class=' row large-10 columns'>
+    <%= form_for @blog, :html => { :multipart => true } do |f| %>
+      <h3>Title</h3>
       <%= f.text_field :title %>
-      <h3>Video Url</h3>
+      <h3>YouTube Url</h3>(optional)
       <%= f.text_field :video %>
       <h3>Body</h3>
-      <%= f.text_area :body %>
+      <%= f.cktext_area :body, class: 'ckeditor' %>
+      <br>
 
+      <h3> <%= f.label "Categories (seperate by commas)" %></h3>
+
+      <%= text_field_tag :tags %>
       <%= f.submit class:'button button-primary' %>
 
     <% end %>  
   </div>
 </div>
+<br><br><br><br><br><br><br><br>

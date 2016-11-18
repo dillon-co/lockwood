@@ -1,0 +1,23 @@
+<div class='row'>
+  <div class='large-7 columns'>
+    <h1><%= @blog.title %></h1>
+    <div>
+      <h5><%= @blog.body.html_safe %></h5>
+    </div>  
+    <% if @blog.video.present? %>
+      <div class='embed-container'>
+        <%= content_tag(:iframe, nil, src: @video_link) %>
+      </div>  
+    <% end %>
+  </div>
+  <div class="large-4 columns" data-sticky-container>
+    <div class="sticky" data-anchor="content">
+      <h4>Categories</h4>
+      <ul>
+        <% @tags.each do |tag| %>
+          <li><%= link_to tag.name.titleize, tag_path(tag.name), class: 'button second' %></li>
+        <% end %>  
+      </ul>
+    </div>
+  </div>   
+</div>

@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -15,7 +15,21 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 
+gem 'ots', '~> 0.5.4'
+gem 'nokogiri'
+
+gem 'will_paginate', '~> 3.1.0'
+
 gem 'foundation-rails'
+gem 'foundation-icons-sass-rails'
+
+gem "paperclip", "~> 5.0.0"
+
+gem 'ckeditor'
+
+gem 'will_paginate-foundation'
+
+gem 'annotate'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
@@ -40,6 +54,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
+  gem 'better_errors'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'

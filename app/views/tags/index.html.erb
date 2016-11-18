@@ -1,0 +1,14 @@
+<div class='row'>
+
+  <h1><strong>Categories</strong></h1>
+  <% @tags.each do |tag| %>
+    <div class='large-4 columns'>
+      <%= link_to tag_path(tag) do  %>
+        <br>
+        <div class='callout tag-callout'>
+          <h4><%= tag.titleize %></h4>
+        </div>  
+      <% end %>
+    </div>
+  <% end %>
+</div>

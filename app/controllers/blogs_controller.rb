@@ -5,7 +5,9 @@ class BlogsController < ApplicationController
   
   def create
     blog = Blog.new(blog_params)
+    blog_tags = params["tags"].split(', ').map { |t| {name: t.downcase} }
     if blog.save
+      blog.tags.create(blog_tags)
       redirect_to blog_path(blog)
      else
       render :new, notice: :error
@@ -13,11 +15,14 @@ class BlogsController < ApplicationController
   end
 
   def index
-    @blogs = Blog.all
+    @blogs = Blog.all.reverse.paginate(page: params[:page], per_page: 2)
+    @tags = Tag.all.map { |t| t.name }.uniq
   end
 
   def show
-    @blog = Blog.find(params[:id])
+    @blog = Blog.includes(:tags).find(params[:id])
+    @tags = @blog.tags
+    @video_link = @blog.video_link
   end
 
   private
