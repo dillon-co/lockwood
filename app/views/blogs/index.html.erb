@@ -6,7 +6,7 @@
     <% @blogs.each do |blog| %>
       <div class="blog-post">
         <h3><strong><%= link_to blog.title.titleize, blog_path(blog), class:'blog-title-link'%></strong><small><%= blog.created_at.strftime("%-m/%-d/%y") %></small></h3>
-        <img class="thumbnail" src="http://placehold.it/850x350">
+        <img class="thumbnail" src="<%= blog.video.present? ? blog.video_image_url : "http://placehold.it/850x350" %>">
         <p><%= blog.summary.html_safe %><%= link_to " Read More", blog_path(blog) %></p>
         <div class='row'>
           <div class="callout">

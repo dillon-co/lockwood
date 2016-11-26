@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115231517) do
+ActiveRecord::Schema.define(version: 20161126053516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(version: 20161115231517) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "small_summary"
+    t.string   "video_image_url"
+    t.string   "video_photo"
     t.index ["admin_id"], name: "index_blogs_on_admin_id", using: :btree
   end
 

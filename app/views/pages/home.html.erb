@@ -1,6 +1,6 @@
 <div class="row">
     <div class="medium-4 columns">
-      <img src="http://placehold.it/450x183&text=LOGO" alt="company logo">
+      <%= image_tag("lockwood_logo.jpeg") %>
     </div>
     <div class="medium-8 columns">
       <img src="http://placehold.it/900x175&text=Responsive Ads - ZURB Playground/333" alt="advertisement for deep fried Twinkies">
@@ -41,7 +41,7 @@
 <hr>
 
 <div class="row column">
-  <h4 style="margin: 0;" class="text-center">BREAKING NEWS</h4>
+  <h4 style="margin: 0;" class="text-center">FAVORITE PRODUCTS</h4>
 </div>
 
 <hr>
@@ -83,133 +83,33 @@
 
   <article>
 
-    <div class="row">
-      <div class="large-6 columns">
-        <p><img src="http://placehold.it/600x370&text=Look at me!" alt="image for article" alt="article preview image"></p>
-      </div>
-      <div class="large-6 columns">
-        <h5><a href="#">'Death Star' Vaporizes Its Own Planet</a></h5>
-        <p>
-          <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-          <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-          <span><i class="fi-comments"> 6 comments</i></span>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-      </div>
-    </div>
+    <% @blogs.first(7).each do |blog|  %>
 
-    <hr>
+    <%= link_to blog_path(blog) do %>
+      <div class="row">
+        <div class="large-6 columns">
+          <p><img src="<%= blog.video.present? ? blog.video_image_url : "http://placehold.it/600x370&text=Look at me!" %>" alt="image for article" alt="article preview image"></p>
+        </div>
+        <div class="large-6 columns">
+          <h5><%= link_to blog.title, blog_path(blog) %></h5>
+          <p>
 
-    <div class="row">
-      <div class="large-6 columns">
-        <p><img src="http://placehold.it/600x370&text=Look at me!" alt="image for article" alt="article preview image"></p>
+            <span><i class="fi-calendar"> <%= blog.created_at.strftime("%-m/%-d/%y") %></i></span>
+
+          </p>
+          <p><%= blog.small_summary %>.</p>
+        </div>
       </div>
-      <div class="large-6 columns">
-        <h5><a href="#">NASA's SLS Rocket Sheds Saturn V Color Scheme in Design Review</a></h5>
-        <p>
-          <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-          <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-          <span><i class="fi-comments"> 6 comments</i></span>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
+     <% end %> 
+
+      <hr>
+
+    <% end %>
+
+
+      <div class='large-7 large-centered columns'> 
+        <%= link_to 'See All Blogs', blogs_path, class:'button' %>
       </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="large-6 columns">
-        <p><img src="http://placehold.it/600x370&text=Look at me!" alt="image for article" alt="article preview image"></p>
-      </div>
-      <div class="large-6 columns">
-        <h5><a href="#">Ingredients for Life Were Always Present on Earth, Comet Suggests</a></h5>
-        <p>
-          <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-          <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-          <span><i class="fi-comments"> 6 comments</i></span>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="large-6 columns">
-        <p><img src="http://placehold.it/600x370&text=Look at me!" alt="image for article" alt="article preview image"></p>
-      </div>
-      <div class="large-6 columns">
-        <h5><a href="#">Astronaut's Watch Worn on the Moon Sells for Record $1.6 Million</a></h5>
-        <p>
-          <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-          <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-          <span><i class="fi-comments"> 6 comments</i></span>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="large-6 columns">
-        <p><img src="http://placehold.it/600x370&text=Look at me!" alt="image for article" alt="article preview image"></p>
-      </div>
-      <div class="large-6 columns">
-        <h5><a href="#">Interstellar Dust on the Galaxy's Magnetic Field | Space Wallpaper</a></h5>
-        <p>
-          <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-          <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-          <span><i class="fi-comments"> 6 comments</i></span>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="large-6 columns">
-        <p><img src="http://placehold.it/600x370&text=Look at me!" alt="image for article" alt="article preview image"></p>
-      </div>
-      <div class="large-6 columns">
-        <h5><a href="#">Explore the Moon (Virtually) with These Awesome Global Maps</a></h5>
-        <p>
-          <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-          <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-          <span><i class="fi-comments"> 6 comments</i></span>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-      </div>
-    </div>
-
-    <hr>
-
-    <div class="row">
-      <div class="large-6 columns">
-        <p><img src="http://placehold.it/600x370&text=Look at me!" alt="image for article" alt="article preview image"></p>
-      </div>
-      <div class="large-6 columns">
-        <h5><a href="#">Best Space Books and Sci-Fi: A Space.com Reading List</a></h5>
-        <p>
-          <span><i class="fi-torso"> By Thadeus &nbsp;&nbsp;</i></span>
-          <span><i class="fi-calendar"> 11/23/16 &nbsp;&nbsp;</i></span>
-          <span><i class="fi-comments"> 6 comments</i></span>
-        </p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae impedit beatae, ipsum delectus aperiam nesciunt magni facilis ullam.</p>
-      </div>
-    </div>
-
-    <hr>
-
-    <ul class="pagination" role="navigation" aria-label="Pagination">
-      <li class="disabled">Previous <span class="show-for-sr">page</span></li>
-      <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-      <li><a href="#" aria-label="Page 2">2</a></li>
-      <li><a href="#" aria-label="Page 3">3</a></li>
-      <li><a href="#" aria-label="Page 4">4</a></li>
-      <li><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
-    </ul>
 
     </article>
 
@@ -339,18 +239,11 @@
       <% @tags.each do |tag| %>
         <span class="secondary label home-tag"><%= link_to tag.titleize, tag_path(tag) %></span>
       <% end %>
-      <!-- <span class="secondary label">Galaxies</span>
-      <span class="secondary label">Milky Way</span>
-      <span class="secondary label">Black Holes</span>
-      <span class="secondary label">Rebels</span>
-      <span class="secondary label">Death Star</span>
-      <span class="secondary label">Republic</span>
-      <span class="secondary label">R2D2</span> -->
     </div>
 
     <div class="large-4 columns">
-      <h5>RANDOM MAG</h5>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti quam voluptatum vel repellat ab similique molestias molestiae ea omnis eos, id asperiores est praesentium, voluptate officia nulla aspernatur sequi aliquam.</p>
+      <h5>LOCKWOOD LLC</h5>
+      <p>Dedicated to helping people attain the body they've always wanted. Because life is better when you are in shape.</p>
     </div>
 
   </div>
