@@ -77,12 +77,20 @@ class Blog < ApplicationRecord
 
   def video_link
     youtube_id = embed_video(video)
-    "//www.youtube.com/embed/#{youtube_id}"
+    "www.youtube.com/embed/#{youtube_id}"
   end  
 
   def embed_video(youtube_url)
     youtube_url.split("=").last
   end
+
+  def get_video_thumbnail
+    if video.present?
+      doc = Nokogiri::HTML(open(video))
+      thumbnail_url = doc.at('/html/head/meta[@property="og:image"]')['content']
+      self.update(video_image_url: thumbnail_url)
+    end  
+  end  
 
   def create_small_summary
     create_summary(2)
@@ -109,9 +117,4 @@ class Blog < ApplicationRecord
     text_without_newlines
   end  
 
-  def get_video_thumbnail
-    doc = Nokogiri::HTML(open(video))
-    thumbnail_url = doc.at('/html/head/meta[@property="og:image"]')['content']
-    self.update(video_image_url: thumbnail_url)
-  end  
 end
