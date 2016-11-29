@@ -67,6 +67,29 @@ ul{
   }  
 }
 
+.promos{
+  .promo{
+    background-color: rgba(0,0,0,0.87);
+    position: relative;
+    .promo-text{
+      // z-index: 1;
+      font-weight: bold; 
+      position: absolute;
+      top: 325px; 
+      background-color: rgba(0,0,0,0.6); 
+      margin-left: auto;
+      color: rgba(255,255,255,0.7);
+    }
+    .sub-promo-text{
+     font-weight: bold; 
+      position: absolute;
+      top: 150px; 
+      background-color: rgba(0,0,0,0.6); 
+      margin-left: auto;
+      color: rgba(255,255,255,0.7); 
+    }
+  }
+}
 .pagination {
   max-width: 100%;
   min-width: 100%;

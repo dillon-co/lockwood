@@ -28,14 +28,33 @@
 
 
 
-<div class="row">
+<div class="row promos">
+  
   <div class="medium-8 columns">
-    <p><img src="http://placehold.it/900x450&text=Promoted Article" alt="main article image"></p>
+    <%= link_to blog_path(@blogs.first) do %>
+      <div class='promo'>
+      <p class='promo-image'><img src="<%= @blogs.first.photo.present? ? @blogs.first.photo.url : @blogs.first.video_image_url %>" alt="main article image"></p>
+        <h2 class='promo-text'><%= @blogs.first.title %></h2>
+    </div>
+    <% end %>
   </div>
+
   <div class="medium-4 columns">
-    <p><img src="http://placehold.it/400x200&text=Other cool article" alt="article promo image" alt="advertisement for deep fried Twinkies"></p>
-    <p><img src="http://placehold.it/400x200&text=Other cool article" alt="article promo image"></p>
+    <%= link_to blog_path(@blogs.second) do %>
+      <div class='promo'>
+        <p clss='promo-image'><img src="<%= @blogs.second.photo.present? ? @blogs.second.photo.url : @blogs.second.video_image_url %>" alt="article promo image"></p>
+          <h3 class='sub-promo-text'><%= @blogs.second.title %></h3>
+      </div> 
+    <% end %>
+
+    <%= link_to blog_path(@blogs.third) do %>  
+      <div class='promo'>
+        <p clss='promo-image'><img src="<%= @blogs.third.photo.present? ? @blogs.third.photo.url : @blogs.third.video_image_url %>" alt="article promo image"></p>
+          <h3 class='sub-promo-text'><%= @blogs.third.title %></h3>
+      </div>  
+    <% end %>  
   </div>
+
 </div>
 
 <hr>
@@ -83,12 +102,17 @@
 
   <article>
 
-    <% @blogs.first(7).each do |blog|  %>
+    <% @blogs[3..9].each do |blog|  %>
 
     <%= link_to blog_path(blog) do %>
       <div class="row">
         <div class="large-6 columns">
-          <p><img src="<%= blog.video.present? ? blog.video_image_url : "http://placehold.it/600x370&text=Look at me!" %>" alt="image for article" alt="article preview image"></p>
+          <% if blog.photo.present? %>
+              <p><img src="<%= blog.photo.url(:thumb) %>" alt="image for article" alt="article preview image"></p>
+          <% else %>
+
+            <p><img src="<%= blog.video.present? ? blog.video_image_url : "http://placehold.it/600x370&text=Look at me!" %>" alt="image for article" alt="article preview image"></p>
+          <% end %>  
         </div>
         <div class="large-6 columns">
           <h5><%= link_to blog.title, blog_path(blog) %></h5>
@@ -97,7 +121,7 @@
             <span><i class="fi-calendar"> <%= blog.created_at.strftime("%-m/%-d/%y") %></i></span>
 
           </p>
-          <p><%= blog.small_summary %>.</p>
+          <p><%= blog.small_summary %>..<%= link_to "Read More", blog_path(blog) %></p>
         </div>
       </div>
      <% end %> 

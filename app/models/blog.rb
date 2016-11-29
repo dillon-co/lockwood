@@ -18,6 +18,39 @@
 #  video_image_url    :string
 #
 
+=begin
+ 
+ TODO: 
+
+    1 Add photo upload to blog
+      a. add s3
+      b. blog sample images
+    2 Products
+      a. endorcements
+      b. wholesale option
+    3 Link SocialMedia
+      a. youtube
+        i. seperate model?
+      b. instagram 
+      c. google plus
+      e. twitter
+      f. facebook
+
+
+  Talk to Chris about:
+
+    1 Store 
+      a. How people buye
+      b. how invioces made?
+    2 Blog Material
+      a. material written?
+      b. accompanying video?
+    3. Elias and Videos
+    4. Adding photo's from flickr or uploading them manually
+
+=end
+
+
 require 'ots'
 require 'nokogiri'
 require 'open-uri'
@@ -27,11 +60,19 @@ class Blog < ApplicationRecord
   belongs_to :admin
   has_many :tags
 
-  after_create :create_summary
+  after_create :create_both_summaries
   after_create :get_video_thumbnail
 
 
-  has_attached_file :photo, styles: { small: "64x64", med: "100x100", large: "200x200" }
+  has_attached_file :photo, styles: { small: "64x64",
+                                      med: "100x100",
+                                      large: "200x200",
+                                      thumb: '370x230',
+                                      promo: "770x385",
+                                      secondary_promo: "370x185",
+                                      blog_index: '850x'
+                                      }
+
   validates_attachment :photo, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
   def video_link

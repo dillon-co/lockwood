@@ -28,6 +28,6 @@ class BlogsController < ApplicationController
   private
 
   def blog_params
-    params.require(:blog).permit(:video, :title, :body)
+    params.require(:blog).permit(:video, :title, :body, :photo)
   end  
 end

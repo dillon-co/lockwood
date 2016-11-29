@@ -4,9 +4,11 @@
 
 <div>
   <div class=' row large-10 columns'>
-    <%= form_for @blog, :html => { :multipart => true } do |f| %>
+    <%= form_for @blog , :html => { :multipart => true } do |f| %>
       <h3>Title</h3>
       <%= f.text_field :title %>
+      <h3>Photo</h3>
+      <%= f.file_field :photo %>
       <h3>YouTube Url</h3>(optional)
       <%= f.text_field :video %>
       <h3>Body</h3>
