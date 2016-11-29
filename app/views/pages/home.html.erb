@@ -31,6 +31,7 @@
 <div class="row promos">
   
   <div class="medium-8 columns">
+    
     <%= link_to blog_path(@blogs.first) do %>
       <div class='promo'>
       <p class='promo-image'><img src="<%= @blogs.first.photo.present? ? @blogs.first.photo.url : @blogs.first.video_image_url %>" alt="main article image"></p>
