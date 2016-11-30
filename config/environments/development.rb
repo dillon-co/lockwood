@@ -45,6 +45,16 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: "lockwood-fitness",
+      access_key_id: ENV['AMAZON_ACCESS_KEY_ID'],
+      secret_access_key: ENV['AMAZON_SECRET_ACCESS_KEY'],
+      s3_region: "us-east-1",
+    }
+  }
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
