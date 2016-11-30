@@ -31,11 +31,11 @@
 <div class="row promos">
   
   <div class="medium-8 columns">
-    
+
     <%= link_to blog_path(@blogs.first) do %>
       <div class='promo'>
       <p class='promo-image'><img src="<%= @blogs.first.photo.present? ? @blogs.first.photo.url : @blogs.first.video_image_url %>" alt="main article image"></p>
-        <h2 class='promo-text'><%= @blogs.first.title %></h2>
+        <h2 class='promo-text'><%= @blogs.first.title.titleize %></h2>
     </div>
     <% end %>
   </div>
@@ -44,14 +44,14 @@
     <%= link_to blog_path(@blogs.second) do %>
       <div class='promo'>
         <p clss='promo-image'><img src="<%= @blogs.second.photo.present? ? @blogs.second.photo.url : @blogs.second.video_image_url %>" alt="article promo image"></p>
-          <h3 class='sub-promo-text'><%= @blogs.second.title %></h3>
+          <h3 class='sub-promo-text'><%= @blogs.second.title.titleize %></h3>
       </div> 
     <% end %>
 
     <%= link_to blog_path(@blogs.third) do %>  
       <div class='promo'>
         <p clss='promo-image'><img src="<%= @blogs.third.photo.present? ? @blogs.third.photo.url : @blogs.third.video_image_url %>" alt="article promo image"></p>
-          <h3 class='sub-promo-text'><%= @blogs.third.title %></h3>
+          <h3 class='sub-promo-text'><%= @blogs.third.title.titleize %></h3>
       </div>  
     <% end %>  
   </div>
@@ -116,7 +116,7 @@
           <% end %>  
         </div>
         <div class="large-6 columns">
-          <h5><%= link_to blog.title, blog_path(blog) %></h5>
+          <h5><%= link_to blog.title.titleize, blog_path(blog) %></h5>
           <p>
 
             <span><i class="fi-calendar"> <%= blog.created_at.strftime("%-m/%-d/%y") %></i></span>
