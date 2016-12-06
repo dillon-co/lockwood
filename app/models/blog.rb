@@ -22,12 +22,10 @@
  
  TODO: 
 
-    1 Add photo upload to blog
-      a. add s3
-      b. blog sample images
     2 Products
-      a. endorcements
-      b. wholesale option
+      a. Endorcements
+      b. Wholesale option
+      c. Fitness plan
     3 Link SocialMedia
       a. youtube
         i. seperate model?
@@ -39,14 +37,7 @@
 
   Talk to Chris about:
 
-    1 Store 
-      a. How people buye
-      b. how invioces made?
-    2 Blog Material
-      a. material written?
-      b. accompanying video?
-    3. Elias and Videos
-    4. Adding photo's from flickr or uploading them manually
+   
 
 =end
 
@@ -71,7 +62,7 @@ class Blog < ApplicationRecord
                                       promo: "770x385",
                                       secondary_promo: "370x185",
                                       blog_index: '850x'
-                                      }
+                                    }
 
   validates_attachment :photo, content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
 
