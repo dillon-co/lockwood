@@ -9,7 +9,13 @@
         <% @blogs.each do |blog| %>
           <div class="blog-post">
             <h2><%= link_to blog.title.titleize, blog_path(blog), class:'blog-title-link' %> <small><%= blog.created_at.strftime("%-m/%-d/%y") %></small></h2>
-            <img class="thumbnail" src="http://placehold.it/850x350">
+          
+            <% if blog.photo.present? %>
+              <p><img src="<%= blog.photo.url(:promo) %>" alt="image for article" alt="article preview image"></p>
+            <% else %>
+              <p><img src="<%= blog.video.present? ? blog.video_image_url : "http://placehold.it/600x370&text=Look at me!" %>" alt="image for article" alt="article preview image"></p>
+            <% end %>
+
             <p><%= blog.summary.html_safe %></p>
             <div class='row'>
               <div class="callout">

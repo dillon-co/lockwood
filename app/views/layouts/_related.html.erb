@@ -1,0 +1,14 @@
+<div class="row column">
+  <p class="lead">Related</p>
+
+  <% @related_blogs.each do |blog| %>
+  <div class="media-object">
+    <div class="media-object-section">
+      <img class="thumbnail" src= "http://placehold.it/100">
+    </div>
+    <div class="media-object-section">
+      <h5><%= blog.title.titleize %></h5>
+    </div>
+  </div>
+  <% end %>
+</div>  

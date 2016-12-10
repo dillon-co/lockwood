@@ -17,6 +17,8 @@ gem 'devise'
 
 gem 'ots', '~> 0.5.4'
 gem 'nokogiri'
+gem 'watir'
+gem 'mechanize', '~> 2.7', '>= 2.7.4'
 
 gem 'will_paginate', '~> 3.1.0'
 
@@ -27,6 +29,8 @@ gem "paperclip", "~> 5.0.0"
 gem 'aws-sdk', '~> 2.3'
 
 gem 'social-share-button'
+
+gem "binding_of_caller"
 
 
 gem 'ckeditor'

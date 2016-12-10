@@ -108,4 +108,24 @@ class Blog < ApplicationRecord
     text_without_newlines
   end  
 
+  # def post_to_facebook
+  #   agent = Mechanize.new 
+  #   doc = agent.get "https://www.facebook.com"
+  #   byebug
+  #   form = agent.page.forms[0]
+  #   form["email"] = "Chris@DrChrisLockwood.com"
+  #   form["password"] = "AveryAddie911"
+  #   form.submit
+  #   puts agent.page.uri
+  # end  
+
+
+  # def post_to_site(agent)
+  #   form = agent.page.forms[0]
+  # end  
+
+
+  # def fill_out_email_and_password(agent)
+  # end  
+
 end

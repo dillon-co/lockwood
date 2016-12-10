@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-  
+ *= require social-share-button 
 
  */
 
@@ -90,6 +90,11 @@ ul{
     }
   }
 }
+
+.social-icon{
+  color: rgba(0,0,0,0.87)
+}
+
 .pagination {
   max-width: 100%;
   min-width: 100%;
@@ -104,6 +109,7 @@ ul{
   min-height: 1000px;
 }
 
+
 .embed-container {
   position: relative;
   padding-bottom: 56.25%;
@@ -112,7 +118,7 @@ ul{
   overflow: hidden;
   width: 100%;
   height: auto;
-  margin-bottom: 12px;
+  // margin-bottom: 12px;
 }
 
 
@@ -121,6 +127,6 @@ ul{
 .embed-container embed {
   position: absolute;
   /*top: 0; left: 0;*/
-  width: 67%;
-  height: 67%;
+  width: 87%;
+  height: 87%;
 }
