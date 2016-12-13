@@ -19,7 +19,11 @@
       </div>
 
     </div>
-  
+  <div class='row columns'>
+     <% if @blog.photo.present? %>
+              <p><img src="<%= @blog.photo.url(:promo) %>" alt="image for article" alt="article preview image"></p>
+          <% end %>
+  </div>  
   <div class='large-7 columns'>
     <div>
       <h5><%= @blog.body.html_safe %></h5>
