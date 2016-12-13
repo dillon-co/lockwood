@@ -5,7 +5,7 @@
     <%= link_to blog_path(blog) do %>
     <div class="media-object">
       <div class="media-object-section">
-        <img class="thumbnail" src= "<%= blog.photo.present? ? blog.photo.url(:thumb) : "http://placehold.it/100" %>">
+        <img class="thumbnail" src= "<%= blog.photo.present? ? blog.photo.url(:med) : "http://placehold.it/100" %>">
       </div>
       <div class="media-object-section">
         <h5><%= blog.title.titleize %></h5>
