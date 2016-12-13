@@ -18,7 +18,8 @@ gem 'devise'
 gem 'ots', '~> 0.5.4'
 gem 'nokogiri'
 gem 'watir'
-gem 'mechanize', '~> 2.7', '>= 2.7.4'
+
+gem "koala", "~> 2.2"
 
 gem 'will_paginate', '~> 3.1.0'
 

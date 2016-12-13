@@ -20,12 +20,16 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blog = Blog.includes(:tags).find(params[:id])
+    blog_id = params[:id]
+    @blog = Blog.includes(:tags).find(blog_id)
     @tags = @blog.tags.map{|t| t.name }
-    @related_blogs = @tags.map do |t| 
-      Blog.includes(:tags).where('tags.name = ?', t).references(:tags).map { |b| b }
+    @r_blogs = @tags.map do |t| 
+      Blog.includes(:tags).where('tags.name = ? and blogs.id != ?', t, blog_id).references(:tags).map { |bl| bl }
     end
-    @related_blogs.flatten!.uniq!.first(4)
+    @r_blogs.flatten!.uniq!
+    @related_blogs = @r_blogs.first(4)
+    # @r_blogs.uniq!
+
     @video_link = @blog.video_link
   end
 

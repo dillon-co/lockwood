@@ -45,6 +45,7 @@
 require 'ots'
 require 'nokogiri'
 require 'open-uri'
+require 'koala'
 
 
 class Blog < ApplicationRecord
@@ -53,9 +54,10 @@ class Blog < ApplicationRecord
 
   after_create :create_both_summaries
   after_create :get_video_thumbnail
+  # after_create :post_to_facebook
 
 
-  has_attached_file :photo, styles: { small: "64x64",
+  has_attached_file :photo, styles: { small: "75x75",
                                       med: "100x100",
                                       large: "200x200",
                                       thumb: '370x230',
@@ -108,16 +110,11 @@ class Blog < ApplicationRecord
     text_without_newlines
   end  
 
-  # def post_to_facebook
-  #   agent = Mechanize.new 
-  #   doc = agent.get "https://www.facebook.com"
-  #   byebug
-  #   form = agent.page.forms[0]
-  #   form["email"] = "Chris@DrChrisLockwood.com"
-  #   form["password"] = "AveryAddie911"
-  #   form.submit
-  #   puts agent.page.uri
-  # end  
+  def post_to_facebook
+    # ChrisLockwoodPhDCSCS
+    graph = Koala::Facebook::API.new(ENV['LOCKWOOD_APP_ACCESS_TOKEN'])
+    byebug
+  end  
 
 
   # def post_to_site(agent)

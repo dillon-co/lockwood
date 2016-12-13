@@ -1,23 +1,24 @@
 <div class='row'>
     
     <div class="title row columns">
+      
       <h1><strong><i><%= @blog.title.titleize %></i></strong></h1>
-      <hr>
-        
-        <div class="large-7 columns">
-        <h5>Categories</h5>
-        <% @tags.each do |tag| %>
-          <%= link_to tag.titleize, tag_path(tag), class: 'button small second' %>
-        <% end %>
-        </div> 
-        
-        <div class="large-3 columns">
-          <h5>Share</h5>
-          <%= social_share_button_tag(@blog.title) %>
-        </div>
+       
+        <div class="row callout">
+          <div class="large-7 columns">
+            <h5>Categories</h5>
+            <% @tags.each do |tag| %>
+              <%= link_to tag.titleize, tag_path(tag), class: 'button small second' %>
+            <% end %>
+          </div> 
+          
+          <div class="large-3 columns">
+            <h5>Share</h5>
+            <%= social_share_button_tag(@blog.title) %>
+          </div>
+      </div>
+
     </div>
-     
-    <hr>
   
   <div class='large-7 columns'>
     <div>
@@ -31,9 +32,13 @@
     <%= social_share_button_tag(@blog.title) %>
   </div>
   
-  <div class="large-4 columns " data-sticky-container>
-    <div class='sticky' data-sticky data-margin-top="0">
-      <%= render "layouts/related" %>
+  <div class="large-4 columns " >
+    <div>
+      <% if @related_blogs.count > 0 %>
+        <%= render "layouts/related" %>
+      <% end %>
+
+        <%= render "layouts/trending" %>
     </div>
   </div>   
 </div>
