@@ -44,10 +44,19 @@ ul{
 
 .blog-title{
   text-align: center;
+  margin-top: 4%;
+  margin-bottom: 2.5%;
 }
 
 .blog-title-link{
   color: rgba(0,0,0,0.87)
+}
+
+.main-blog-title{
+  margin-left: 2.5%;
+   margin-top: 4%;
+  margin-bottom: 2.5%;
+  // font-size: large;
 }
 
 
@@ -103,6 +112,7 @@ ul{
 
 .tag-callout{
   text-align: center;
+  border: 1px solid rgba(0,0,0,0.87);
 }
 
 .ckeditor{

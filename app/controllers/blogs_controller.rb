@@ -15,7 +15,7 @@ class BlogsController < ApplicationController
   end
 
   def index
-    @blogs = Blog.all.reverse.paginate(page: params[:page], per_page: 9)
+    @blogs = Blog.all.reverse.paginate(page: params[:page], per_page: 3)
     @tags = Tag.all.map { |t| t.name }.uniq
   end
 
