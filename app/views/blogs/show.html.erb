@@ -3,7 +3,16 @@
     <div class=" row columns">
       
       <h1 class='main-blog-title'><strong><i><%= @blog.title.titleize %></i></strong></h1>
-       
+       <hr>
+
+    </div>
+  <div class='row columns'>
+     <% if @blog.photo.present? %>
+        <div class='blog-title-photo' style='background-image: url(<%= @blog.photo.url %>);'>  
+          <!-- <p><img src="<%= @blog.photo.url(:promo) %>" alt="image for article" alt="article preview image"></p> -->
+        </div> 
+        <br> 
+      <% end %>
         <div class="row small-centered columns callout">
           <div class="large-7 columns">
             <h5>Categories</h5>
@@ -17,15 +26,6 @@
             <%= social_share_button_tag(@blog.title) %>
           </div>
       </div>
-
-    </div>
-  <div class='row columns'>
-     <% if @blog.photo.present? %>
-        <div class='blog-title-photo' style='background-image: url(<%= @blog.photo.url %>);'>  
-          <!-- <p><img src="<%= @blog.photo.url(:promo) %>" alt="image for article" alt="article preview image"></p> -->
-        </div> 
-        <br> 
-      <% end %>
   </div>  
   <div class='large-7 columns'>
     <div>
