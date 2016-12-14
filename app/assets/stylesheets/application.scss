@@ -61,6 +61,8 @@ ul{
 
 
 .blog-title-photo{
+  @media(min-width: 1000px) {
+  // Any CSS in here will only be applied if the screen width is less than or equal to 1200px wide
   vertical-align: left;
   
   background-attachment: fixed;
@@ -68,6 +70,7 @@ ul{
   background-size: cover;
   min-height: 480px;
   vertical-align: top;
+  }
 }
 
 .button.second{
