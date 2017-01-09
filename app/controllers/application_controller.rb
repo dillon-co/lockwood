@@ -5,6 +5,6 @@ class ApplicationController < ActionController::Base
   def get_common_objects
     @all_tags = Tag.all.map { |t| t.name }.uniq
     @blogs = Blog.includes(:tags).all.order('created_at DESC')
-    @logo = SiteStyle.where(style_type: :logo_photo).last.photo.url
+    # @logo = SiteStyle.where(style_type: :logo_photo).last.photo.url
   end  
 end
