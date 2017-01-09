@@ -15,6 +15,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 
+gem 'stripe'
+
 gem 'ots', '~> 0.5.4'
 gem 'nokogiri'
 gem 'watir'
@@ -22,6 +24,12 @@ gem 'watir'
 gem "koala", "~> 2.2"
 
 gem 'will_paginate', '~> 3.1.0'
+
+gem 'sidekiq'
+gem "sidekiq-cron", "~> 0.4.0"
+gem 'sinatra', :require => nil
+gem 'redis-rails'
+
 
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
@@ -48,6 +56,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
+gem 'rails-jquery-autocomplete'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

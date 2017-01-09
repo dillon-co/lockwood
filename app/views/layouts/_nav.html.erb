@@ -18,6 +18,11 @@
       </ul>
     </div>
     <div class="top-bar-right">
+      <ul>
+      <% if admin_signed_in? %>
+        <li><%= link_to "Admin Dashboard", dashboard_path %></li>
+      <% end %>  
+      </ul>  
     </div>
   </div>
 </nav>

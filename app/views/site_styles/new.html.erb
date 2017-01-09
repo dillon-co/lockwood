@@ -1,0 +1,14 @@
+<div class='row columns'>
+  <%= form_for @new_style, html: { multipart: true } do |f|%>
+
+      <h3>Photo</h3>
+      <p>In order they appear on home page(Other than logo)</p>
+      <%= f.select :style_type, ["background_photo_1",
+                                 "background_photo_2",
+                                 "background_photo_3",
+                                 "background_photo_4",
+                                 "logo_photo"] %>
+      <%= f.file_field :photo %>
+    <%= submit_tag 'Update Style',  class: "button button-primary" %>
+  <% end %>
+</div>

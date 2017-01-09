@@ -1,0 +1,9 @@
+<% if admin_signed_in? %>
+  <%= form_for @product do |f| %>
+    <%= f.label "Which User" %>
+    <% @user_names.each do |u| %>
+    <% end %>
+  <% end %>
+<% else %>
+You need to be signed in to see this page <%= link_to "Log On Here", new_admin_session_path, class: 'button success' %> 
+<% end %>

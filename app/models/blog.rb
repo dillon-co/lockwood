@@ -16,6 +16,7 @@
 #  photo_updated_at   :datetime
 #  small_summary      :string
 #  video_image_url    :string
+#  video_photo        :string
 #
 
 =begin

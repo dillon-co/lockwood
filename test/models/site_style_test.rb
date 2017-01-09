@@ -1,27 +1,21 @@
 # == Schema Information
 #
-# Table name: blogs
+# Table name: site_styles
 #
 #  id                 :integer          not null, primary key
-#  admin_id           :integer
-#  video              :string
-#  title              :string           not null
-#  body               :text             not null
+#  style_type         :integer
+#  style_color        :string
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
-#  summary            :string
 #  photo_file_name    :string
 #  photo_content_type :string
 #  photo_file_size    :integer
 #  photo_updated_at   :datetime
-#  small_summary      :string
-#  video_image_url    :string
-#  video_photo        :string
 #
 
 require 'test_helper'
 
-class BlogTest < ActiveSupport::TestCase
+class SiteStyleTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

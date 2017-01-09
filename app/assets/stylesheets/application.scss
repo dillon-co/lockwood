@@ -19,9 +19,9 @@
 
 
 h1,h2,h3,h4,h5,h6,p,input{
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
+  opacity: 0.87;
 }
-
 
 .top-bar {
   background-color: rgba(0,0,0,0.87);
@@ -67,13 +67,81 @@ ul{
   background-position: center center;
   @media(min-width: 1000px) {
   // Any CSS in here will only be applied if the screen width is less than or equal to 1200px wide
-  min-height: 480px;
-  background-attachment: fixed;
+    min-height: 480px;
+    background-attachment: fixed;
   }
   @media(max-width: 800px){
     min-height: 200px;
   }
 }
+
+.home-title-image{
+  margin-top: 0px;
+  vertical-align: left;
+  vertical-align: top; 
+  background-size: cover;
+  background-position: center center;
+   @media(min-width: 1000px) {
+  // Any CSS in here will only be applied if the screen width is less than or equal to 1200px wide
+    min-height: 480px;
+    background-attachment: fixed;
+  }
+  @media(max-width: 800px){
+    min-height: 200px;
+  }
+  .over-lay{
+    @media(min-width: 1000px) {
+  // Any CSS in here will only be applied if the screen width is less than or equal to 1200px wide
+    min-height: 480px;
+    background-attachment: fixed;
+    }
+    @media(max-width: 800px){
+    min-height: 200px;
+    }
+    background-color: rgba(0,0,0,0.5);
+  }
+  .title-text{
+    // margin-top: 125px;
+    color: white;
+    text-align: center;
+    h1,h3,h5,h5{font-family: 'Lato'}
+    h2{font-family: 'Bungee'} 
+  }  
+  .first-image{
+    margin-top: 125px;
+  }
+  .second-image{
+    margin-top: 100px;
+  }
+}
+
+.logo-title{
+  background-color: #3E3E3E;
+  color: white;
+  h1{
+    font-size: 70px;
+  }
+  h1,h2,h3,h5,h5{font-family: 'Bungee';}
+  text-align: center;
+}
+
+.button.clear{
+  background-color: rgba(0,0,0,0);
+  border: 2px solid white;
+  border-radius: 3px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.button.clear-2{
+  background-color: rgba(0,0,0,0);
+  border: 2px solid rgba(0,0,0,0.8);
+  border-radius: 3px;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0,0,0,0.8)
+}
+
 
 .button.second{
   border: 1px solid;
@@ -145,7 +213,47 @@ ul{
   height: auto;
   // margin-bottom: 12px;
 }
+.i-v-e{
+  // background-color: #1A5282;
+  background-color: #34C6F7;
+  // background-color: #36BBF3;
+  min-height: 260px;
+  .icon-text{
+    // border-radius: 10px;
+  }
+  // background-color:#4CADC0;
+  // background-color: #3B6182;
+  a{
+    color: white;
+  }
+  color: white;
+  text-align: center;
+    h1,h2,h3,h4{font-family: 'Bungee'}
+  .icons{
+    font-size: 75px;
+  }
+}
 
+.suppliment-seller{
+  text-align: center;
+}
+
+.blog-count{
+  font-weight: bold;
+  text-align: center;
+  h1{
+    font-size: 170px;
+  }
+}
+
+.is-row{
+  margin-top: 37px;
+}
+
+.panel{
+  text-align: center;
+  font-weight: bold;
+}
 
 .embed-container iframe,
 .embed-container object,
