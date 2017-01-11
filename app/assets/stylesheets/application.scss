@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
- *= require social-share-button 
+ *= require social-share-button
 
  */
 
@@ -29,7 +29,7 @@ h1,h2,h3,h4,h5,h6,p,input{
     background: transparent !important;
     a:not(.button) {
       background: transparent !important;
-    }  
+    }
   }
   a, h4{
     color: white;
@@ -62,7 +62,7 @@ ul{
 
 .blog-title-photo{
   vertical-align: left;
-  vertical-align: top; 
+  vertical-align: top;
   background-size: cover;
   background-position: center center;
   @media(min-width: 1000px) {
@@ -78,7 +78,7 @@ ul{
 .home-title-image{
   margin-top: 0px;
   vertical-align: left;
-  vertical-align: top; 
+  vertical-align: top;
   background-size: cover;
   background-position: center center;
    @media(min-width: 1000px) {
@@ -100,13 +100,6 @@ ul{
     }
     background-color: rgba(0,0,0,0.5);
   }
-  .title-text{
-    // margin-top: 125px;
-    color: white;
-    text-align: center;
-    h1,h3,h5,h5{font-family: 'Lato'}
-    h2{font-family: 'Bungee'} 
-  }  
   .first-image{
     margin-top: 125px;
   }
@@ -115,6 +108,13 @@ ul{
   }
 }
 
+.title-text{
+  // margin-top: 125px;
+  color: white;
+  text-align: center;
+  h1,h3,h5,h5{font-family: 'Lato'}
+  h2{font-family: 'Bungee'}
+}  
 .logo-title{
   background-color: #3E3E3E;
   color: white;
@@ -156,7 +156,7 @@ ul{
 .home-tag{
   a{
     color: white;
-  }  
+  }
 }
 
 .promos{
@@ -165,20 +165,20 @@ ul{
     position: relative;
     .promo-text{
       // z-index: 1;
-      font-weight: bold; 
+      font-weight: bold;
       position: absolute;
-      top: 325px; 
-      background-color: rgba(0,0,0,0.6); 
+      top: 325px;
+      background-color: rgba(0,0,0,0.6);
       margin-left: auto;
       color: rgba(255,255,255,0.7);
     }
     .sub-promo-text{
-     font-weight: bold; 
+     font-weight: bold;
       position: absolute;
-      top: 150px; 
-      background-color: rgba(0,0,0,0.6); 
+      top: 150px;
+      background-color: rgba(0,0,0,0.6);
       margin-left: auto;
-      color: rgba(255,255,255,0.7); 
+      color: rgba(255,255,255,0.7);
     }
   }
 }
