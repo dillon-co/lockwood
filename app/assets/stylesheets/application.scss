@@ -100,6 +100,13 @@ ul{
     }
     background-color: rgba(0,0,0,0.5);
   }
+  .title-text{
+    // margin-top: 125px;
+    color: white;
+    text-align: center;
+    h1,h3,h5,h5{font-family: 'Lato'}
+    h2{font-family: 'Bungee'}
+  }  
   .first-image{
     margin-top: 125px;
   }
@@ -108,13 +115,6 @@ ul{
   }
 }
 
-.title-text{
-  // margin-top: 125px;
-  color: white;
-  text-align: center;
-  h1,h3,h5,h5{font-family: 'Lato'}
-  h2{font-family: 'Bungee'}
-}  
 .logo-title{
   background-color: #3E3E3E;
   color: white;
