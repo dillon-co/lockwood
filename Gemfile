@@ -19,7 +19,6 @@ gem 'stripe'
 
 gem 'ots', '~> 0.5.4'
 gem 'nokogiri'
-gem 'watir'
 
 gem "koala", "~> 2.2"
 
