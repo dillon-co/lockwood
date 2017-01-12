@@ -7,7 +7,7 @@
         <div class='callout tag-callout' style="background-image: url(<%= Tag.find_by(name: tag).blog.photo.present? ? Tag.find_by(name: tag).blog.photo.url(:large) : @logo_photo %>)">
           <div class="tag-over-lay">
             <h4><%= tag.titleize %></h4>
-        </div>
+          </div>
         </div>
       <% end %>
     </div>
