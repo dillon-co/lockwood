@@ -3,7 +3,6 @@
   <h1 class='main-blog-title'><strong><i>Categories</i></strong></h1>
   <% @tags.each do |tag| %>
     <div class='large-4 columns end'>
-      <%= tag_o = Tag.find_by(name: tag) %>
       <%= link_to tag_path(tag) do  %>
         <div class='callout tag-callout' style="background_photo: url(<%= Tag.find_by(name: tag).blog.photo.present? ? Tag.find_by(name: tag).blog.photo.url : @logo_photo %>)">
           <h4><%= tag.titleize %></h4>
