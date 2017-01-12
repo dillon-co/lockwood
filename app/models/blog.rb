@@ -20,8 +20,8 @@
 #
 
 =begin
- 
- TODO: 
+
+ TODO:
 
     2 Products
       a. Endorcements
@@ -30,7 +30,7 @@
     3 Link SocialMedia
       a. youtube
         i. seperate model?
-      b. instagram 
+      b. instagram
       c. google plus
       e. twitter
       f. facebook
@@ -38,7 +38,7 @@
 
   Talk to Chris about:
 
-   
+
 
 =end
 
@@ -51,7 +51,7 @@ require 'koala'
 
 class Blog < ApplicationRecord
   belongs_to :admin
-  has_many :tags
+  has_many :tags, dependent: :destroy
 
   after_create :create_both_summaries
   after_create :get_video_thumbnail
@@ -72,7 +72,7 @@ class Blog < ApplicationRecord
   def video_link
     youtube_id = embed_video(video)
     "www.youtube.com/embed/#{youtube_id}"
-  end  
+  end
 
   def embed_video(youtube_url)
     youtube_url.split("=").last
@@ -83,47 +83,47 @@ class Blog < ApplicationRecord
       doc = Nokogiri::HTML(open(video))
       thumbnail_url = doc.at('/html/head/meta[@property="og:image"]')['content']
       self.update(video_image_url: thumbnail_url)
-    end  
-  end  
+    end
+  end
 
   def create_small_summary
     create_summary(2)
-  end  
+  end
 
   def create_big_summary
     create_summary(3)
-  end  
+  end
 
   def create_both_summaries
     self.update(summary: create_big_summary, small_summary: create_small_summary)
-  end  
+  end
 
   def create_summary(sentence_count)
     full_text = OTS.parse(non_html_body)
     ots_parsed_summary = full_text.summarize(sentences: sentence_count)
     blog_summary = ots_parsed_summary.map { |h| h[:sentence] }.join("")
     blog_summary
-  end  
+  end
 
   def non_html_body
     text_with_newlines = Nokogiri::HTML(body).content
     text_without_newlines = text_with_newlines.gsub(/\r?\n|\r/, "")
     text_without_newlines
-  end  
+  end
 
   def post_to_facebook
     # ChrisLockwoodPhDCSCS
     graph = Koala::Facebook::API.new(ENV['LOCKWOOD_APP_ACCESS_TOKEN'])
     byebug
-  end  
+  end
 
 
   # def post_to_site(agent)
   #   form = agent.page.forms[0]
-  # end  
+  # end
 
 
   # def fill_out_email_and_password(agent)
-  # end  
+  # end
 
 end
