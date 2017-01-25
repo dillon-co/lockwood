@@ -16,6 +16,9 @@
 //= require foundation
 //= require ckeditor/init
 //= require social-share-button
+//= require react
+//= require react_ujs
+//= require components
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

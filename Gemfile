@@ -29,6 +29,7 @@ gem "sidekiq-cron", "~> 0.4.0"
 gem 'sinatra', :require => nil
 gem 'redis-rails'
 
+gem 'react-rails'
 
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'

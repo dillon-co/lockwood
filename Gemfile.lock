@@ -185,6 +185,13 @@ GEM
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
+    react-rails (1.10.0)
+      babel-transpiler (>= 0.7.0)
+      coffee-script-source (~> 1.8)
+      connection_pool
+      execjs
+      railties (>= 3.2)
+      tilt
     redis (3.3.2)
     redis-actionpack (5.0.1)
       actionpack (>= 4.0, < 6)
@@ -299,6 +306,7 @@ DEPENDENCIES
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   rails-jquery-autocomplete
+  react-rails
   redis-rails
   sass-rails (~> 5.0)
   sidekiq
@@ -315,4 +323,4 @@ DEPENDENCIES
   will_paginate-foundation
 
 BUNDLED WITH
-   1.13.7
+   1.14.1

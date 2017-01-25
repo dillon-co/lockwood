@@ -1,0 +1,2 @@
+class EmailSignup < ApplicationRecord
+end

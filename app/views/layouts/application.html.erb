@@ -24,7 +24,13 @@
 
   <body>
     <%= render 'layouts/nav' %>
-    <%= yield %>
+    <% if admin_signed_in? %>
+      <%= yield %>
+    <% else %>
+      <div class='container container-fluid'>
+        <%= render 'layouts/site_gate' %>
+      </div>
+    <% end %>
   </body>
   <footer>
   <%= render 'layouts/footer' %>

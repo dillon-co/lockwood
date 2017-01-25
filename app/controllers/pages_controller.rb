@@ -17,14 +17,14 @@ class PagesController < ApplicationController
     @ingredients_count = 178
     @suppliments_count = 23
     @clients = Client.all || ["No Clients Yet"]
-  end  
+  end
 
   def landing
-    @tags = Tag.all.map { |t| t.name }.uniq
-    @blogs = Blog.includes(:tags).all.order('created_at DESC')
-    @photo_1 = SiteStyle.where(style_type: :background_photo_1).last.photo.url
-    @photo_2 = SiteStyle.where(style_type: :background_photo_2).last.photo.url
-    # @photo_3 = SiteStyle.where(style_type: :background_photo_3).last.photo.url
-    @logo = SiteStyle.where(style_type: :logo_photo).last.photo.url
-  end  
+    # @tags = Tag.all.map { |t| t.name }.uniq
+    # @blogs = Blog.includes(:tags).all.order('created_at DESC')
+    # @photo_1 = SiteStyle.where(style_type: :background_photo_1).last.photo.url
+    # @photo_2 = SiteStyle.where(style_type: :background_photo_2).last.photo.url
+    # # @photo_3 = SiteStyle.where(style_type: :background_photo_3).last.photo.url
+    # @logo = SiteStyle.where(style_type: :logo_photo).last.photo.url
+  end
 end
