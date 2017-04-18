@@ -1,51 +1,112 @@
-<div class='home-title-image' style='background-image: url(<%= @photo_1 %>);'>
-    <div class='over-lay'>
-    <br>
-    <div class='columns title-text first-image'>
-      <h2>Lockwood Fitness</h2>
-      <h5>Create the perfect suppliment mix with our innovative fomula software</h5>
-      <%= link_to "Read Blog", blogs_path, class: 'button clear' %>
-      <%= link_to "Make Formula", blogs_path, class: 'button clear'  %>
+<div class="row blog-callout">
+  <div class="small-3 columns">
+    <h1>BLOG</h1>
+  </div>
+  <div class="small-9 columns">
+    <!-- <hr> -->
+  </div>
+</div>
+  <div class="blog-background">
+    <div class="lower-gray">
+      <div class="upper-gray">
+        <div class="blog-content" >
+          <span class='medium-8 columns' >
+            <%= link_to blog_path(@last_blog) do %>
+              <div class="main-blog-image home-title-image" style='background-image: url( <%= @last_blog.photo.url %> )'>
+                <%#= image_tag(@last_blog.photo.url(:blog_index), :style => "border: 2px solid black; max-height: 480px; margin-left:45px;") %>
+                <div class="outer-border">
+                  <div class="inner-border">
+                    <h1>
+                      <%= @last_blog.title.titleize %>
+                    </h1>
+                    <h5 class='date'><%= @last_blog.created_at.strftime("%m-%d-%y") %></h5>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+
+          </span>
+          <span class='medium-4 columns blog-summary'>
+            <%= link_to blog_path(@second_blog) do %>
+              <div class="panel row home-second-image" style='background-image: url( <%= @second_blog.photo.url %> )'>
+                <div class="outer-border">
+                  <div class="inner-border">
+                    <h3>
+                      <%= @second_blog.title.titleize %>
+                    </h3>
+                    <h5 class='date'><%= @second_blog.created_at.strftime("%m-%d-%y") %></h5>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <%= link_to blog_path(@third_blog) do %>
+              <div class="panel row home-second-image" style='background-image: url( <%= @third_blog.photo.url %> )'>
+                <div class="outer-border">
+                  <div class="inner-border">
+                    <h3>
+                      <%= @third_blog.title.titleize %>
+                    </h3>
+                    <h6 class='date'><%= @third_blog.created_at.strftime("%m-%d-%y") %></h5>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="row blog-indexs small-4 columns">
+  <div class='small-6 columns index-type'> <h5> <%= link_to "Categories", tags_path %> </h5> </div> <div class='small-6 columns index-type'> <h5><%= link_to "View All Blogs", blogs_path %></h5> </div>
+</div>
+<div class="row">
+  <div class="blog-list">
+    <% @other_blogs.reverse.each do |blog| %>
+      <%= link_to blog_path(blog) do %>
+        <div class="individual-blog small-3 columns">
+          <img class="thumbnail" src= "<%= blog.photo.present? ? blog.photo.url(:large) : "http://placehold.it/100" %>"><br>
+          <h4><strong><%= blog.title %></strong></h4>
+          <hr>
+          <p> <%= blog.summary.split(' ').first(30).join(' ').html_safe %> ... </p>
+          <h6><%= blog.created_at.strftime("%m-%d-%y")%></h6>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="row ingredient-library blog-indexs">
+    <h1 class=>INGREDIENT LIBRARY</h1>
+  </div>
+  <div class='row columns' style='text-align:center; margin-bottom: 200px;'>
+    <div class="callout">
+      <h3> Nothing Added Yet (Can't style until I have something to style)</h3>
     </div>
   </div>
 </div>
 
-<div class='i-v-e'>
-  <br><br>
-  <div class='row small-centered columns'>
-    <%= link_to blogs_path do  %>
-    <div class='large-4 columns icon-text'>
-      <h1 class='icons'><i class="fi-wrench"></i><i class="fi-widget"></i></h1>
-      <h3>Innovation</h3>
-    </div>
-    <% end %>
-    <%= link_to blogs_path do  %>
-    <div class='large-4 columns icon-text'>
-      <h1 class='icons'><i class="fi-checkbox"></i></h1>
-      <h3>Validation</h3>
-    </div>
-    <% end %>
-    <%= link_to blogs_path do  %>
-    <div class='large-4 columns icon-text'>
-    <h1 class='icons'> <i class="fi-megaphone"></i></h1>
-      <h3>Education</h3>
-    </div>
-    <% end %>
-
-    <br><br>
+  <div class="small-5 columns">
   </div>
 </div>
 
-<div class='home-title-image' style='background-image: url(<%= @photo_2 %>);'>
-  <div class='over-lay'>
-    <br><br>
-    <div class='row small-centered columns title-text second-image'>
-      <h1>What We Do</h1>
-      <h5>You want to create the perfect suppliment. Maybe you want a suppliment to help you loose weight. Maybe you just want something to help you stay strong and want it totally organic. Or maybe you don't care about all that hippy stuff and just want the best formula to help you get mad swoll.</h5>
-       <h3>What ever you'r trying to accomplish, we'll find the perfect mix for you.</h3>
-      <br>
-      <%= link_to "Create Your Secret Formula", blogs_path, class: 'button clear'  %>
+<div class="blog-background">
+  <div class="lower-gray">
+    <div class="upper-gray">
+      <div class="row blog-content">
+        <div class="medium-7 columns image-gallary" >
+          <div class="">
+            <h1>Gallary</h1>
+          </div>
+          <h2>Please Email Me 6 Photos</h2>
+        </div>
+        <div class='medium-4 columns acclaim-gallary'>
+          <div >
+            <h1>Acclaim</h1>
+          </div>
+          <h2>Please Email Me acclaim quotes</h2>
+        </div>
+      </div>
     </div>
-    <br><br><br>
   </div>
 </div>

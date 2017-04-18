@@ -1,16 +1,16 @@
 <div class='row'>
-    
+
     <div class=" row columns">
-      
+
       <h1 class='main-blog-title'><strong><i><%= @blog.title.titleize %></i></strong></h1>
        <hr>
 
     </div>
   <div class='row columns'>
      <% if @blog.photo.present? %>
-        <div class='blog-title-photo' style='background-image: url(<%= @blog.photo.url %>);'>  
-        </div> 
-        <br> 
+        <div class='blog-title-photo' style='background-image: url(<%= @blog.photo.url %>);'>
+        </div>
+        <br>
       <% end %>
         <div class="row small-centered columns callout">
           <div class="large-7 columns">
@@ -18,18 +18,18 @@
             <% @tags.each do |tag| %>
               <%= link_to tag.titleize, tag_path(tag), class: 'button small second' %>
             <% end %>
-          </div> 
-          
+          </div>
+
           <div class="large-3 columns">
             <h5>Share</h5>
-            <%= social_share_button_tag(@blog.title) %>
+            <%= social_share_button_tag(@blog.title, :style => 'min-height: 300px;')  %>
           </div>
       </div>
-  </div>  
+  </div>
   <div class='large-7 columns'>
     <div>
-      <h5><%= @blog.body.html_safe %></h5>
-    </div>  
+      <h6><%= @blog.body.html_safe %></h6>
+    </div>
     <% if @blog.video.present? %>
       <div class='embed-container'>
         <%= content_tag(:iframe, nil, src: "http://#{@video_link}") %>
@@ -37,7 +37,7 @@
     <% end %>
     <%= social_share_button_tag(@blog.title) %>
   </div>
-  
+
   <div class="large-4 columns " >
     <div>
       <% if @related_blogs.count > 0 %>
@@ -46,5 +46,5 @@
 
         <%= render "layouts/trending" %>
     </div>
-  </div>   
+  </div>
 </div>

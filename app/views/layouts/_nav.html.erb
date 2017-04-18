@@ -1,21 +1,23 @@
 <nav class="top-bar" data-topbar>
-  <div class="top-bar-title">
-    <h4><strong><%= link_to "Lockwood", root_path %></strong></h4>
-  </div>
+  <!-- <div class="top-bar-title" style='min-width: 300px;'>
+    <%#= link_to root_path do %>
+      <%#= image_tag("LOCKWOOD_full_copy.png", :style => 'max-width: 300px;') %>
+    <%# end %>
+
+  </div> -->
   <div id="responsive-menu">
     <div class="top-bar-left">
-      <ul class="dropdown menu" data-responsive-menu>
+      <ul class="dropdown menu" data-responsive-menu style="margin-top: 15px; margin-left: 305px;">
         <li>
-          <%= link_to "Blog", blogs_path %>
-         <!--  <ul class="menu vertical">
+          <h4><%= link_to "Blog ", blogs_path %> </h4>
+          <!-- <ul class="menu vertical">
             <li><a href="#">One</a></li>
             <li><a href="#">Two</a></li>
             <li><a href="#">Three</a></li>
           </ul> -->
         </li>
-        <li><%= link_to "Categories", tags_path %></li>
-        <li><a href="#">Formulas</a></li>
-        <li><a href="#">Ingredients</a></li>
+        <li><h4><%= link_to "Categories ", tags_path %> </h4></li>
+        <li><h4><a href="#">Ingredients</a> </h4></li>
       </ul>
     </div>
     <div class="top-bar-right">

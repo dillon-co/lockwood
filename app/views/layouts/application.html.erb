@@ -7,49 +7,43 @@
     <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
 
-    <title>Lockwood Fitness</title>
+    <title>Dr. Chris Lockwood</title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= javascript_include_tag Ckeditor.cdn_url %>
     <%= csrf_meta_tags %>
   </head>
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({
-      google_ad_client: "ca-pub-4084386736207021",
-      enable_page_level_ads: true
-    });
-  </script>
 
   <body>
     <%= render 'layouts/nav' %>
-    <% if admin_signed_in? %>
+    <%= link_to root_path do %>
+      <%= image_tag("LOCKWOOD_full_copy.png", :style => 'max-width: 300px; margin-top: -70px; margin-left: 20px;') %>
+    <% end %>
+    <% if admin_signed_in? || request.original_url == "#{request.base_url}/admins/sign_in" %>
       <%= yield %>
     <% else %>
       <div class='container container-fluid'>
+        <%= link_to "Admin Sign In", new_admin_session_path %>
         <%= render 'layouts/site_gate' %>
       </div>
     <% end %>
   </body>
+
   <footer>
-  <%= render 'layouts/footer' %>
-  <div class="row expanded">
+    <hr>
+    <div class="row expanded">
+      <div class="medium-6 columns">
+        <ul class="menu">
+         <li><%= link_to "Admin", new_admin_session_path %></li>
+        </ul>
+      </div>
 
-    <div class="medium-6 columns">
-      <ul class="menu">
-       <li><%= link_to "Admin", new_admin_session_path %></li>
-      <!-- <li><a href="#">Partner</a></li>
-        <li><a href="#">Explore</a></li> -->
-      </ul>
+      <div class="medium-6 columns">
+        <ul class="menu align-right">
+          <li class="menu-text">Copyright © 2016 Lockwood LLC</li>
+        </ul>
+      </div>
     </div>
-
-    <div class="medium-6 columns">
-      <ul class="menu align-right">
-        <li class="menu-text">Copyright © 2016 Lockwood LLC</li>
-      </ul>
-    </div>
-  </div>
-
-</footer>
+  </footer>
 </html>
